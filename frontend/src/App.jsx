@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Upload from "./pages/Upload";
 import History from "./pages/History";
+import Results from "./pages/Results";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -23,6 +24,12 @@ function App() {
         <Route path="/history" element={
           <ProtectedRoute>
             <History />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/results" element={
+          <ProtectedRoute>
+            <Results />
           </ProtectedRoute>
         } />
       </Routes>
