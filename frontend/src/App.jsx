@@ -4,18 +4,16 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Upload from "./pages/Upload";
 import History from "./pages/History";
+import Results from "./pages/Results";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } />
 
         <Route path="/upload" element={
           <ProtectedRoute>
@@ -26,6 +24,12 @@ function App() {
         <Route path="/history" element={
           <ProtectedRoute>
             <History />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/results" element={
+          <ProtectedRoute>
+            <Results />
           </ProtectedRoute>
         } />
       </Routes>
